@@ -1,15 +1,13 @@
 /*
 
-Lavish HTML CSS Template
-
-https://templatemo.com/tm-458-lavish
+Bamba
 		
 */
 
 body
 {
 	background: #000000;
-	color: #ecd9d9;
+	color: #999;
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -180,8 +178,8 @@ h1,h2,h3,h4,h5
 	}
 #home h1
     {
-        border: 2px solid #01c201f6;
-        color: #75f300;
+        border: 2px solid #D43F52;
+        color: #D43F52;
         display: inline-block;
         letter-spacing: 6px;
         padding: 25px 35px;
@@ -194,8 +192,8 @@ h1,h2,h3,h4,h5
 #home .btn
     {
         background: transparent;
-        border: 2px solid #73ff00;
-        color: #00e013;
+        border: 2px solid #ffffff;
+        color: #ffffff;
         font-size: 16px;
         font-weight: bold;
         width: 180px;
