@@ -179,8 +179,8 @@ h1,h2,h3,h4,h5
 	}
 #home h1
     {
-        border: 2px solid #D43F52;
-        color: #D43F52;
+        border: 2px solid #57e206;
+        color: #57e206;
         display: inline-block;
         letter-spacing: 6px;
         padding: 25px 35px;
@@ -417,3 +417,133 @@ footer hr
         color: #D43F52;
     }
 /* end social icon */
+
+/* Estilos generales para la sección de contacto */
+#contact {
+    background: #000000;
+    color: #999;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+#contact h2,
+#contact h3,
+#contact h4 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Estructura de la información de contacto */
+.contact-info {
+    background: #1a1a1a;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #D43F52;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.contact-item h4 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.contact-item p,
+.contact-item a {
+    color: #999;
+    margin: 0;
+}
+
+.map-link {
+    color: #57e206;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del formulario */
+.contact-form {
+    background: #1a1a1a;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.form-control {
+    background: transparent;
+    border: 2px solid #999;
+    border-radius: 0;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #57e206;
+    outline: none;
+}
+
+.btn-primary {
+    background: #D43F52;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #ffffff;
+    color: #D43F52;
+}
+
+/* Estilos para los iconos sociales */
+.social-links {
+    margin-top: 30px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #333;
+    border-radius: 50%;
+    color: #999;
+    margin-right: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.social-icon:hover {
+    background: #D43F52;
+    color: #ffffff;
+}
+
+/* Animaciones */
+.wow {
+    visibility: hidden;
+}
