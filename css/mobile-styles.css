@@ -1,0 +1,147 @@
+/* Ajustes generales para móviles */
+body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Tamaños de fuente responsivos */
+h1 { font-size: calc(1.5rem + 1.5vw); }
+h2 { font-size: calc(1.3rem + 1vw); }
+h3 { font-size: calc(1.1rem + 0.8vw); }
+p, li, a { font-size: calc(0.9rem + 0.3vw); }
+
+/* Botones más grandes para tacto */
+.btn {
+    padding: 12px 24px;
+    margin: 8px 0;
+    min-width: 140px;
+}
+
+/* Ajustes para secciones en móviles */
+.section {
+    padding: 30px 0;
+}
+
+/* Mejoras para las cards de servicios */
+.media {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.media-object {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+/* Portfolio responsive */
+.portfolio-thumb {
+    margin-bottom: 20px;
+}
+
+.portfolio-thumb img {
+    width: 100%;
+    height: auto;
+}
+
+/* Formulario de contacto */
+.contact-form input, 
+.contact-form textarea, 
+.contact-form button {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact-form button {
+    padding: 12px;
+}
+
+/* Contact info */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #4CAF50;
+}
+
+.contact-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: #4CAF50;
+}
+
+.btn-map {
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Social links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Feedback táctil */
+.touch-feedback {
+    opacity: 0.7;
+    transform: scale(0.98);
+    transition: all 0.2s;
+}
+
+/* Menú de navegación para móviles */
+@media (max-width: 768px) {
+    #fp-nav {
+        display: none;
+    }
+    
+    .col-xs-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .contact-info, .contact-form {
+        padding: 20px;
+    }
+}
+
+/* Tamaños muy pequeños */
+@media (max-width: 480px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    
+    .btn {
+        padding: 10px 20px;
+        min-width: 120px;
+    }
+    
+    .section {
+        padding: 20px 0;
+    }
+    
+    .media-object {
+        font-size: 1.5rem;
+    }
+}

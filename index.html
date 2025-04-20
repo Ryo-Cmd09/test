@@ -29,96 +29,8 @@
     <link rel="stylesheet" href="css/html-colors-style.css">
     <!-- font-awesome2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Estilos adicionales para móviles -->
-    <style>
-        /* Ajustes generales para móviles */
-        body {
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        /* Tamaños de fuente responsivos */
-        h1 { font-size: calc(1.5rem + 1.5vw); }
-        h2 { font-size: calc(1.3rem + 1vw); }
-        h3 { font-size: calc(1.1rem + 0.8vw); }
-        p, li, a { font-size: calc(0.9rem + 0.3vw); }
-        
-        /* Botones más grandes para tacto */
-        .btn {
-            padding: 12px 24px;
-            margin: 8px 0;
-            min-width: 140px;
-        }
-        
-        /* Ajustes para secciones en móviles */
-        .section {
-            padding: 30px 0;
-        }
-        
-        /* Mejoras para las cards de servicios */
-        .media {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-        }
-        
-        .media-object {
-            font-size: 2rem;
-            margin-right: 15px;
-        }
-        
-        /* Portfolio responsive */
-        .portfolio-thumb {
-            margin-bottom: 20px;
-        }
-        
-        /* Formulario de contacto */
-        .contact-form input, 
-        .contact-form textarea, 
-        .contact-form button {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-        
-        .contact-form button {
-            padding: 12px;
-        }
-        
-        /* Menú de navegación para móviles */
-        @media (max-width: 768px) {
-            #fp-nav {
-                display: none;
-            }
-            
-            .col-xs-11 {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            
-            .portfolio-thumb img {
-                width: 100%;
-                height: auto;
-            }
-            
-            .contact-info, .contact-form {
-                padding: 20px;
-            }
-        }
-        
-        /* Tamaños muy pequeños */
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.5rem; }
-            h3 { font-size: 1.3rem; }
-            
-            .btn {
-                padding: 10px 20px;
-                min-width: 120px;
-            }
-        }
-    </style>
+    <!-- Estilos para móviles -->
+    <link rel="stylesheet" href="css/mobile-styles.css">
 </head>
 <body>
 
@@ -234,7 +146,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
                     <div class="portfolio-thumb">
-                        <img src="images/4.jpg" class="img-responsive" alt="Paneles solares" style="width:100%; height:auto;">
+                        <img src="images/4.jpg" class="img-responsive" alt="Paneles solares">
                         <div class="portfolio-overlay">
                             <h4>Paneles Solares</h4>
                             <h5>Aquí podrás ver todos los paneles solares</h5>
@@ -244,37 +156,41 @@
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
                     <div class="portfolio-thumb">
-                        <img src="images/3.jpg" class="img-responsive" alt="Productos sustentables" style="width:100%; height:auto;">
+                        <img src="images/3.jpg" class="img-responsive" alt="Productos sustentables">
                         <div class="portfolio-overlay">
                             <h4>Sistemas de Seguridad</h4>
                             <h5>Soluciones tecnológicas para tu protección</h5>
+                            <a href="catalogo2.html" class="btn btn-primary">Ver catálogo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
                     <div class="portfolio-thumb">
-                        <img src="images/2.jpg" class="img-responsive" alt="Iluminación solar" style="width:100%; height:auto;">
+                        <img src="images/2.jpg" class="img-responsive" alt="Iluminación solar">
                         <div class="portfolio-overlay">
                             <h4>Iluminación Solar</h4>
                             <h5>Focos y luminarias solares</h5>
+                            <a href="catalogo3.html" class="btn btn-primary">Ver catálogo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
                     <div class="portfolio-thumb">
-                        <img src="images/1.jpg" class="img-responsive" alt="Proyectos sustentables" style="width:100%; height:auto;">
+                        <img src="images/1.jpg" class="img-responsive" alt="Proyectos sustentables">
                         <div class="portfolio-overlay">
                             <h4>Proyectos Personalizados</h4>
                             <h5>Soluciones a medida para tu negocio o hogar</h5>
+                            <a href="catalogo4.html" class="btn btn-primary">Ver catálogo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
                     <div class="portfolio-thumb">
-                        <img src="images/portfolio-5.jpg" class="img-responsive" alt="Más productos" style="width:100%; height:auto;">
+                        <img src="images/1.jpg" class="img-responsive" alt="Más productos">
                         <div class="portfolio-overlay">
                             <h4>Más Productos</h4>
                             <h5>Descubre nuestra gama completa</h5>
+                            <a href="catalogo5.html" class="btn btn-primary">Ver catálogo</a>
                         </div>
                     </div>
                 </div>
@@ -314,6 +230,10 @@
                                     <a href="https://maps.google.com/?q=Buin+Oriente" target="_blank" class="btn btn-sm btn-map">Ver en mapa</a>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Social Media Links -->
+                        <div class="social-links mt-4">
                         </div>
                     </div>
                 </div>
@@ -379,34 +299,7 @@
     <script src="js/jquery.simple-text-rotator.js"></script>
     <!-- custom -->
     <script src="js/custom.js"></script>
-    
-    <!-- Script adicional para mejorar experiencia móvil -->
-    <script>
-        // Inicialización de plugins
-        $(document).ready(function() {
-            // Inicializar WOW.js
-            new WOW().init();
-            
-            // Ajustar altura de secciones en móviles
-            function adjustSectionHeights() {
-                if ($(window).width() < 768) {
-                    $('.section').css('min-height', $(window).height() + 'px');
-                } else {
-                    $('.section').css('min-height', '');
-                }
-            }
-            
-            // Ejecutar al cargar y al redimensionar
-            adjustSectionHeights();
-            $(window).resize(adjustSectionHeights);
-            
-            // Mejorar clics en móviles
-            $('a, button').on('touchstart', function() {
-                $(this).addClass('touch-feedback');
-            }).on('touchend', function() {
-                $(this).removeClass('touch-feedback');
-            });
-        });
-    </script>
+    <!-- Script para móviles -->
+    <script src="js/mobile-scripts.js"></script>
 </body>
 </html>
