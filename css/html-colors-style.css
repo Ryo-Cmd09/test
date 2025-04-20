@@ -547,3 +547,24 @@ footer hr
 .wow {
     visibility: hidden;
 }
+
+/* Transiciones suaves para todos los elementos interactivos */
+a, button, .producto {
+    transition: all 0.3s ease !important;
+}
+
+/* Mejorar legibilidad en móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    h2, h3 {
+        font-size: 24px;
+    }
+    
+    .page-title p {
+        font-size: 18px;
+    }
+}
