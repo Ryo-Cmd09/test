@@ -6,9 +6,11 @@ Html colors set
 */
 
 body
+
+
 {
 	background: #000000;
-	color: #999;
+	color: #EFF0E9;
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -47,7 +49,7 @@ footer .fp-tableCell
 /* start all heading */
 h1,h2,h3,h4,h5
     {
-        color: #ffffff;
+        color: #EFF0E9;
         font-weight: bold;
     }
 /* end all heading */
@@ -205,7 +207,7 @@ h1,h2,h3,h4,h5
     }
 #home .btn:hover
     {
-        background: #D43F52;
+        background: #72825F;
         border-color: transparent;
     }
 /* end home */
@@ -229,7 +231,7 @@ h1,h2,h3,h4,h5
     {
         border: 2px solid #ffffff;
         border-radius: 50%;
-        color: #D43F52;
+        color: #72825F;
         font-size: 24px;
         margin-right: 24px;
         width: 60px;
@@ -256,7 +258,7 @@ h1,h2,h3,h4,h5
 #about h4
     {
         padding: 15px 0;
-		color: #D43F52;
+		color: #264922;
     }
 #about .progress
     {
@@ -304,7 +306,7 @@ h1,h2,h3,h4,h5
     }
 #portfolio .portfolio-thumb .portfolio-overlay
     {
-        background: #D43F52;
+        background: #72825F;
         top: 0;
         left: 0;
         right: 0;
@@ -342,7 +344,7 @@ h1,h2,h3,h4,h5
     {
         border: 2px solid #ffffff;
         border-radius: 50%;
-        color: #D43F52;
+        color: #264922;
         width: 50px;
         height: 50px;
         line-height: 45px;
@@ -506,7 +508,7 @@ footer hr
 }
 
 .btn-primary {
-    background: #D43F52;
+    background: #72825F;
     border: none;
     color: #ffffff;
     font-weight: bold;
@@ -517,7 +519,7 @@ footer hr
 
 .btn-primary:hover {
     background: #ffffff;
-    color: #D43F52;
+    color: #Eff0E9;
 }
 
 /* Estilos para los iconos sociales */
@@ -539,7 +541,7 @@ footer hr
 }
 
 .social-icon:hover {
-    background: #D43F52;
+    background: #264922;
     color: #ffffff;
 }
 
@@ -567,4 +569,11 @@ a, button, .producto {
     .page-title p {
         font-size: 18px;
     }
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* centra el logo y agrega espacio debajo */
 }
