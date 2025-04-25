@@ -1,323 +1,770 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Catálogo de Paneles Solares | Alma Verde</title>
-    <meta name="description" content="Catálogo de paneles solares ofrecidos por Alma Verde Ingeniería Sustentable.">
-    <meta name="author" content="Bamba.cel">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Estilo personalizado -->
-    <link rel="stylesheet" href="css/html-colors-style.css">
-    <!-- Estilos del catálogo -->
-    <link rel="stylesheet" href="css/catalogo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo de Torniquetes y Controles de Acceso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .page-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: normal;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .badge-new {
+            background-color: #2ecc71;
+        }
+        
+        .badge-tech {
+            background-color: #9b59b6;
+        }
+        
+        .badge-accessible {
+            background-color: #e67e22;
+        }
+        
+        .view-details {
+            display: inline-flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .view-details:hover {
+            color: #2980b9;
+        }
+        
+        .view-details i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover {
+            color: #333;
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .modal-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-section {
+            margin-bottom: 20px;
+        }
+        
+        .modal-section h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .specs-list {
+            list-style-type: none;
+        }
+        
+        .specs-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .specs-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- Barra de navegación -->
-<nav class="navbar navbar-default">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Alma Verde</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html">Inicio</a></li>
-            <li class="active"><a href="catalogo.html">Catálogo</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- Sección del catálogo -->
-<section class="catalogo">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 page-title wow fadeIn">
-                <h2>Catálogo de Paneles Solares</h2>
-                <p>Soluciones de energía limpia para tu hogar o negocio</p>
-            </div>
-        </div>
-
-        <div class="row">
+        <header class="page-header">
+            <h1 class="page-title">Catálogo Completo de Torniquetes</h1>
+            <p class="page-subtitle">12 modelos profesionales para control de acceso</p>
+        </header>
+        
+        <div class="products-grid">
             <!-- Producto 1 -->
-            <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                <div class="producto" data-toggle="modal" data-target="#modalProducto1">
-                    <img src="images-catalogo/1.jpg" alt="Panel Solar Monocristalino">
-                    <div class="producto-info">
-                        <h3>Panel Monocristalino</h3>
-                        <p>Alta eficiencia en espacios reducidos...</p>
-                        <i class="fa fa-search-plus"></i> Ver detalles
-                    </div>
+            <div class="product-card">
+                <img src="images-catalogo/1.jpg" alt="Torniquete Pedestal Simple" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">1. TORNIQUETE PEDESTAL SIMPLE</h3>
+                    <p class="product-description">Diseño compacto en acero inoxidable con función de caída de brazo automática.</p>
+                    <span class="product-badge badge-new">Nuevo</span>
+                    <a href="#modalProducto1" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
                 </div>
             </div>
-
-             <!-- Producto 77 -->
-             <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                <div class="producto" data-toggle="modal" data-target="#modalProducto77">
-                    <img src="images-catalogo/1.jpg" alt="Panel Solar Monocristalino">
-                    <div class="producto-info">
-                        <h3>Panel Monocristalino</h3>
-                        <p>Alta eficiencia en espacios reducidosssss...</p>
-                        <i class="fa fa-search-plus"></i> Ver detalles
-                    </div>
-                </div>
-            </div>
-
+            
             <!-- Producto 2 -->
-            <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                <div class="producto" data-toggle="modal" data-target="#modalProducto2">
-                    <img src="images-catalogo/2.jpg" alt="Panel Solar Policristalino">
-                    <div class="producto-info">
-                        <h3>Panel Policristalino</h3>
-                        <p>Excelente relación calidad-precio...</p>
-                        <i class="fa fa-search-plus"></i> Ver detalles
-                    </div>
+            <div class="product-card">
+                <img src="images-catalogo/2.jpg" alt="Torniquete Bidireccional" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">2. TORNIQUETE BIDIRECCIONAL</h3>
+                    <p class="product-description">Con lector tarjeta-huella Silk TS-2022PRO integrado.</p>
+                    <a href="#modalProducto2" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
                 </div>
             </div>
-
+            
             <!-- Producto 3 -->
-            <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                <div class="producto" data-toggle="modal" data-target="#modalProducto3">
-                    <img src="images-catalogo/3.jpg" alt="Panel Solar Flexible">
-                    <div class="producto-info">
-                        <h3>Panel Flexible</h3>
-                        <p>Ligero y adaptable a superficies irregulares...</p>
-                        <i class="fa fa-search-plus"></i> Ver detalles
-                    </div>
+            <div class="product-card">
+                <img src="images-catalogo/3.jpg" alt="Torniquete Abatible Alto Tráfico" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">3. TORNIQUETE ABATIBLE UN CARRIL ALTO TRÁFICO</h3>
+                    <p class="product-description">Modelo FBL6000 Pro para alto flujo de personas.</p>
+                    <a href="#modalProducto3" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
                 </div>
             </div>
-
+            
             <!-- Producto 4 -->
-            <div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.8s">
-                <div class="producto" data-toggle="modal" data-target="#modalProducto4">
-                    <img src="images-catalogo/4.jpg" alt="Kit Solar Residencial">
-                    <div class="producto-info">
-                        <h3>Kit Residencial</h3>
-                        <p>Todo lo que necesitas para empezar...</p>
-                        <i class="fa fa-search-plus"></i> Ver detalles
-                    </div>
+            <div class="product-card">
+                <img src="images-catalogo/4.jpg" alt="Torniquete FBL4000 PRO" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">4. TORNIQUETE FBL4000 PRO</h3>
+                    <p class="product-description">Barrera de doble aleta para alto volumen de tráfico.</p>
+                    <a href="#modalProducto4" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 5 -->
+            <div class="product-card">
+                <img src="images-catalogo/1.jpg" alt="Torniquete Abatible Central" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">5. TORNIQUETE ABATIBLE CENTRAL CARRIL</h3>
+                    <p class="product-description">Para carril adicional en oficinas y edificios.</p>
+                    <a href="#modalProducto5" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 6 -->
+            <div class="product-card">
+                <img src="images-catalogo/2.jpg" alt="Torniquete Minusválido Abatible" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">6. TORNIQUETE MINUSVALIDO ABATIBLE</h3>
+                    <p class="product-description">Modelo SBT-2000S para personas con movilidad reducida.</p>
+                    <span class="product-badge badge-accessible">Accesible</span>
+                    <a href="#modalProducto6" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 7 -->
+            <div class="product-card">
+                <img src="images-catalogo/3.jpg" alt="Lector SilkID Huella-Tarjeta" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">7. LECTOR SILKID HUELLA-TARJETA</h3>
+                    <p class="product-description">Interior y exterior empotrado, modelo FR1500S.</p>
+                    <a href="#modalProducto7" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 8 -->
+            <div class="product-card">
+                <img src="images-catalogo/4.jpg" alt="Lector Standalone Huella-Tarjeta" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">8. LECTOR STANDALONE HUELLA-TARJETA ID EXT MA500</h3>
+                    <p class="product-description">Dispositivo autónomo para control de acceso.</p>
+                    <a href="#modalProducto8" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 9 -->
+            <div class="product-card">
+                <img src="images-catalogo/1.jpg" alt="Reconocimiento Facial Standalone" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">9. FACIAL STANDALONE DAHUA 3.000 USER</h3>
+                    <p class="product-description">Reconocimiento facial con huella, tarjeta y QR.</p>
+                    <span class="product-badge badge-tech">Tecnología</span>
+                    <a href="#modalProducto9" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 10 -->
+            <div class="product-card">
+                <img src="images-catalogo/2.jpg" alt="Torniquete Oscilante Óptico" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">10. TORNIQUETE OSCILANTE ÓPTICO 1 HOJA DSN205S</h3>
+                    <p class="product-description">Nebula Bi-Direction Daosafe para interiores/exteriores.</p>
+                    <a href="#modalProducto10" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 11 -->
+            <div class="product-card">
+                <img src="images-catalogo/3.jpg" alt="Torniquete Trípode Nebula" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">11. TORNIQUETE TRÍPODE DSN50 NEBULA</h3>
+                    <p class="product-description">Bi-Direction Daosafe, diseño delgado y compacto.</p>
+                    <a href="#modalProducto11" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Producto 12 -->
+            <div class="product-card">
+                <img src="images-catalogo/4.jpg" alt="Torniquete Solapa Aleta Óptico" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">12. TORNIQUETE SOLAPA ALETA ÓPTICO DISCAPACITADOS DS2000 + DS3000</h3>
+                    <p class="product-description">Bi-Direction Daosafe para peatones y minusválidos.</p>
+                    <span class="product-badge badge-accessible">Accesible</span>
+                    <a href="#modalProducto12" class="view-details">
+                        <i class="fas fa-search-plus"></i> Ver detalles
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- Modal Producto 1 -->
-<div class="modal fade" id="modalProducto1" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <!-- Modales para los 12 productos -->
+    <!-- Modal Producto 1 -->
+    <div id="modalProducto1" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Panel Solar Monocristalino 300W</h4>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">1. TORNIQUETE PEDESTAL SIMPLE</h2>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="images-catalogo/1.jpg" alt="Panel Monocristalino" class="modal-image">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="modal-subtitle">Descripción</h3>
-                        <p class="modal-text">Paneles de alta eficiencia fabricados con células de silicio monocristalino. Ideal para espacios reducidos donde se necesita máxima potencia.</p>
-                        
-                        <div class="especificaciones">
-                            <h3 class="modal-subtitle">Especificaciones</h3>
-                            <ul class="modal-list">
-                                <li><span class="modal-feature">Potencia:</span> 300W</li>
-                                <li><span class="modal-feature">Eficiencia:</span> 18-20%</li>
-                                <li><span class="modal-feature">Temperatura de trabajo:</span> -40°C a +85°C</li>
-                                <li><span class="modal-feature">Garantía:</span> 25 años</li>
-                                <li><span class="modal-feature">Dimensiones:</span> 1640 x 992 x 40 mm</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="images-catalogo/1.jpg" alt="Torniquete Pedestal Simple" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El nuevo torniquete trípode, de diseño compacto que reduce la ocupación de espacio, está fabricado en acero inoxidable y es duradero. Incorpora una luz indicadora de entrada en una posición visible para guiar el paso. El brazo del torniquete se baja automáticamente en caso de emergencia.</p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-modal-close" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-modal-action">Solicitar Cotización</button>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Carcasa:</strong> Acero inoxidable SUS304</li>
+                        <li><strong>Tipo:</strong> Trípode bidireccional con función de caída de brazo</li>
+                        <li><strong>Indicadores:</strong> Pictogramas LED para uso intuitivo</li>
+                        <li><strong>Consumo energético:</strong> Bajo</li>
+                        <li><strong>Instalación:</strong> Sencilla y fácil</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Producto 2 -->
-<div class="modal fade" id="modalProducto2" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal Producto 2 -->
+    <div id="modalProducto2" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Panel Solar Policristalino 280W</h4>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">2. TORNIQUETE BIDIRECCIONAL</h2>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="images-catalogo/2.jpg" alt="Panel Policristalino" class="modal-image">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="modal-subtitle">Descripción</h3>
-                        <p class="modal-text">Paneles de excelente relación calidad-precio, fabricados con células de silicio policristalino. Perfecto para instalaciones comerciales.</p>
-                        
-                        <div class="especificaciones">
-                            <h3 class="modal-subtitle">Especificaciones</h3>
-                            <ul class="modal-list">
-                                <li><span class="modal-feature">Potencia:</span> 280W</li>
-                                <li><span class="modal-feature">Eficiencia:</span> 16-18%</li>
-                                <li><span class="modal-feature">Temperatura de trabajo:</span> -40°C a +85°C</li>
-                                <li><span class="modal-feature">Garantía:</span> 20 años</li>
-                                <li><span class="modal-feature">Dimensiones:</span> 1650 x 992 x 40 mm</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="images-catalogo/2.jpg" alt="Torniquete Bidireccional" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El torniquete bidireccional con lector tarjeta-huella Silk TS-2022PRO es la solución perfecta para mejorar la seguridad en tu establecimiento. Con su tecnología avanzada y diseño elegante, este producto ofrece un control de acceso eficiente y confiable.</p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-modal-close" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-modal-action">Solicitar Cotización</button>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Marca:</strong> ZK</li>
+                        <li><strong>Modelo:</strong> Silk TS-2022PRO</li>
+                        <li><strong>Autenticación:</strong> Tarjeta y huella digital</li>
+                        <li><strong>Dirección:</strong> Bidireccional</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Producto 3 -->
-<div class="modal fade" id="modalProducto3" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal Producto 3 -->
+    <div id="modalProducto3" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Panel Solar Flexible 150W</h4>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">3. TORNIQUETE ABATIBLE UN CARRIL ALTO TRÁFICO</h2>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="images-catalogo/3.jpg" alt="Panel Flexible" class="modal-image">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="modal-subtitle">Descripción</h3>
-                        <p class="modal-text">Paneles flexibles y ligeros que se adaptan a superficies curvas. Ideal para autocaravanas, barcos y aplicaciones móviles.</p>
-                        
-                        <div class="especificaciones">
-                            <h3 class="modal-subtitle">Especificaciones</h3>
-                            <ul class="modal-list">
-                                <li><span class="modal-feature">Potencia:</span> 150W</li>
-                                <li><span class="modal-feature">Eficiencia:</span> 15-17%</li>
-                                <li><span class="modal-feature">Peso:</span> 2.5 kg</li>
-                                <li><span class="modal-feature">Flexibilidad:</span> Hasta 30° de curvatura</li>
-                                <li><span class="modal-feature">Dimensiones:</span> 1200 x 540 x 2 mm</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="images-catalogo/3.jpg" alt="Torniquete Abatible Alto Tráfico" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El TORNIQUETE ABATIBLE UN CARRIL ALTO TRAFICO SIN UCA es perfecto para mantener un control de acceso efectivo y garantizar la seguridad en tus instalaciones. Fabricado por la reconocida marca ZK, este torniquete ofrece durabilidad y confiabilidad excepcionales.</p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-modal-close" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-modal-action">Solicitar Cotización</button>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> FBL6000 Pro</li>
+                        <li><strong>Tipo:</strong> Abatible de un carril</li>
+                        <li><strong>Uso:</strong> Alto tráfico</li>
+                        <li><strong>Operación:</strong> Suave y silenciosa</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Producto 77 -->
-<div class="modal fade" id="modalProducto77" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal Producto 4 -->
+    <div id="modalProducto4" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Panel Solar Flexible 150W</h4>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">4. TORNIQUETE FBL4000 PRO</h2>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="images-catalogo/3.jpg" alt="Panel Flexible" class="modal-image">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="modal-subtitle">Descripción</h3>
-                        <p class="modal-text">Paneles flexibles y ligeros que se adaptan a superficies curvas. Ideal para autocaravanas, barcos y aplicaciones móviles.</p>
-                        
-                        <div class="especificaciones">
-                            <h3 class="modal-subtitle">Especificaciones</h3>
-                            <ul class="modal-list">
-                                <li><span class="modal-feature">Potencia:</span> 150W</li>
-                                <li><span class="modal-feature">Eficiencia:</span> 15-17%</li>
-                                <li><span class="modal-feature">Peso:</span> 2.5 kg</li>
-                                <li><span class="modal-feature">Flexibilidad:</span> Hasta 30° de curvatura</li>
-                                <li><span class="modal-feature">Dimensiones:</span> 1200 x 540 x 2 mm</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="images-catalogo/4.jpg" alt="Torniquete FBL4000 PRO" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>Una barrera de aleta con un atractivo diseño y sistema de control de ingresos de bajo costo diseñada para un alto volumen de tráfico. La barrera con doble aleta.</p>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-modal-close" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-modal-action">Solicitar Cotización</button>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Diseño:</strong> Barrera de doble aleta</li>
+                        <li><strong>Uso:</strong> Alto volumen de tráfico</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                        <li><strong>Autenticación:</strong> RFID y/o biométrico</li>
+                        <li><strong>Emergencia:</strong> Retracción automática de barreras</li>
+                        <li><strong>Batería:</strong> Opcional para cortes de energía</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Modal Producto 4 -->
-<div class="modal fade" id="modalProducto4" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg" role="document">
+    <!-- Modal Producto 5 -->
+    <div id="modalProducto5" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Kit Solar Residencial 3KW</h4>
-            </div>
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">5. TORNIQUETE ABATIBLE CENTRAL CARRIL</h2>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="images-catalogo/4.jpg" alt="Kit Residencial" class="modal-image">
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="modal-subtitle">Descripción</h3>
-                        <p class="modal-text">Kit completo para viviendas que incluye paneles, inversor, estructura de montaje y todos los componentes necesarios para una instalación llave en mano.</p>
-                        
-                        <div class="especificaciones">
-                            <h3 class="modal-subtitle">Especificaciones</h3>
-                            <ul class="modal-list">
-                                <li><span class="modal-feature">Potencia total:</span> 3KW</li>
-                                <li><span class="modal-feature">Componentes incluidos:</span> 10 paneles de 300W, inversor 3KW, estructura, cableado</li>
-                                <li><span class="modal-feature">Ahorro estimado:</span> Hasta 70% en factura eléctrica</li>
-                                <li><span class="modal-feature">Garantía:</span> 5 años en kit completo</li>
-                                <li><span class="modal-feature">Instalación:</span> Incluye visita técnica</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="images-catalogo/1.jpg" alt="Torniquete Abatible Central" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El TORNIQUETE ABATIBLE CENTRAL PARA CARRIL ADICIONAL es una solución ideal para mejorar la seguridad en espacios como oficinas, edificios corporativos y gimnasios. Este producto de alta calidad está diseñado para ofrecer un control de acceso efectivo y seguro.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Tipo:</strong> Abatible central</li>
+                        <li><strong>Uso:</strong> Carril adicional</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                        <li><strong>Flujo:</strong> Paso fluido y seguro</li>
+                        <li><strong>Instalación:</strong> Fácil integración</li>
+                    </ul>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-modal-close" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-modal-action">Solicitar Cotización</button>
+        </div>
+    </div>
+
+    <!-- Modal Producto 6 -->
+    <div id="modalProducto6" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">6. TORNIQUETE MINUSVALIDO ABATIBLE</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/2.jpg" alt="Torniquete Minusválido Abatible" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El torniquete minusválido abatible SBT-2000S de la marca ZK, es la opción ideal para garantizar la seguridad en tu negocio o institución. Con un diseño resistente y funcional, este torniquete es perfecto para controlar el acceso de personas con movilidad reducida.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> SBT-2000S</li>
+                        <li><strong>Marca:</strong> ZK</li>
+                        <li><strong>Accesibilidad:</strong> Para sillas de ruedas</li>
+                        <li><strong>Material:</strong> Acero inoxidable</li>
+                        <li><strong>Resistencia:</strong> A la intemperie</li>
+                        <li><strong>Dimensiones:</strong> Adecuadas para discapacidad</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Footer -->
-<footer class="wow fadeIn">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p>Copyright &copy; 2025 Bamba.cel. Diseñado por <a href="https://www.instagram.com/bamba.cel/">Bamba</a></p>
-                <hr>
+    <!-- Modal Producto 7 -->
+    <div id="modalProducto7" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">7. LECTOR SILKID HUELLA-TARJETA INTERIOR Y EXTERIOR EMPOTRA</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/3.jpg" alt="Lector SilkID Huella-Tarjeta" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El Lector SilkID Huella-Tarjeta Interior y Exterior Empotra FR1500S es la solución perfecta para tu seguridad. Con su tecnología avanzada de lectura de huella dactilar y tarjeta, este lector garantiza la identificación precisa y rápida de las personas autorizadas.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> FR1500S</li>
+                        <li><strong>Autenticación:</strong> Huella dactilar y tarjeta</li>
+                        <li><strong>Instalación:</strong> Interior y exterior empotrado</li>
+                        <li><strong>Capacidad:</strong> Hasta 3,000 huellas</li>
+                        <li><strong>Tiempo respuesta:</strong> Menos de 1 segundo</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</footer>
 
-<!-- Scripts -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script>
-    new WOW().init();
-</script>
+    <!-- Modal Producto 8 -->
+    <div id="modalProducto8" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">8. LECTOR STANDALONE HUELLA-TARJETA ID EXT MA500</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/4.jpg" alt="Lector Standalone Huella-Tarjeta" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El LECTOR STANDALONE HUELLA-TARJETA ID EXT MA500 es un dispositivo de seguridad esencial para cualquier establecimiento. Con este lector, podrás controlar y gestionar el acceso de las personas de manera eficiente y segura.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> MA500</li>
+                        <li><strong>Tipo:</strong> Standalone (autónomo)</li>
+                        <li><strong>Autenticación:</strong> Huella y tarjeta ID</li>
+                        <li><strong>Instalación:</strong> Interior/exterior</li>
+                        <li><strong>Conexión:</strong> Redes externas</li>
+                        <li><strong>Monitoreo:</strong> Tiempo real</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal Producto 9 -->
+    <div id="modalProducto9" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">9. FACIAL STANDALONE DAHUA 3.000 USER HUELLA-TARJ QR WIFI</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/1.jpg" alt="Reconocimiento Facial Standalone" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>Pantalla táctil de cristal de 4,3 pulgadas con una resolución de 480 × 272. Cámara gran angular de 2 MP con doble lente, iluminación infrarroja y DWDR. Múltiples métodos de desbloqueo, incluyendo huella dactilar, rostro, tarjeta IC y contraseña.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Pantalla:</strong> 4.3" táctil (480×272)</li>
+                        <li><strong>Cámara:</strong> 2MP gran angular con doble lente</li>
+                        <li><strong>Métodos:</strong> Rostro, huella, tarjeta, QR, contraseña</li>
+                        <li><strong>Detección:</strong> Mascarillas</li>
+                        <li><strong>Capacidad:</strong> 3,000 usuarios, 3,000 rostros, 5,000 huellas</li>
+                        <li><strong>Precisión:</strong> 99.9%</li>
+                        <li><strong>Tiempo:</strong> 0.2s por persona</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 10 -->
+    <div id="modalProducto10" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">10. TORNIQUETE OSCILANTE ÓPTICO 1 HOJA DSN205S NEBULA BI-DIRECTION DAOSAFE</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/2.jpg" alt="Torniquete Oscilante Óptico" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>Torniquete oscilante nebulosa. Es ideal tanto para ambientes interiores como exteriores, diseño resistente al agua. En la parte superior, está cubierto por un alto vidrio templado negro, que muestra un carácter atractivo e impresionante.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> DSN205S</li>
+                        <li><strong>Marca:</strong> Nebula Bi-Direction Daosafe</li>
+                        <li><strong>Tipo:</strong> Oscilante óptico 1 hoja</li>
+                        <li><strong>Uso:</strong> Interior/exterior</li>
+                        <li><strong>Resistencia:</strong> Al agua</li>
+                        <li><strong>Material superior:</strong> Vidrio templado negro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 11 -->
+    <div id="modalProducto11" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">11. TORNIQUETE TRÍPODE DSN50 NEBULA BI-DIRECTION DAOSAFE</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/3.jpg" alt="Torniquete Trípode Nebula" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El torniquete trípode marca Daosafe, modelo Nebula DSN-50 es el más rentable en todos los tipos de torniquetes, con un diseño delgado y delicado para ahorrar espacio. La combinación de la tradición y el arte moderno definitivamente alegrarán nuestra visión y traerán una sorpresa inesperada.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> DSN50</li>
+                        <li><strong>Marca:</strong> Nebula Bi-Direction Daosafe</li>
+                        <li><strong>Tipo:</strong> Trípode</li>
+                        <li><strong>Diseño:</strong> Delgado y compacto</li>
+                        <li><strong>Rentabilidad:</strong> Alta relación costo-beneficio</li>
+                        <li><strong>Estética:</strong> Combinación tradicional-moderna</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Producto 12 -->
+    <div id="modalProducto12" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">12. TORNIQUETE SOLAPA ALETA ÓPTICO DISCAPACITADOS DS2000 + DS3000 BI-DIRECTION DAOSAFE</h2>
+            <div class="modal-body">
+                <img src="images-catalogo/4.jpg" alt="Torniquete Solapa Aleta Óptico" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>Descripción</h3>
+                    <p>El Torniquete doble acceso DS-2000 +DS-3000 esta diseñado para controlar la entrada o salida de peatones y acceso Minusvalidos en áreas restringidas, Cuenta con acceso bidireccional doble generalmente utilizado en el flujo de tráfico de peatones alto en ambas direcciones.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Especificaciones Técnicas</h3>
+                    <ul class="specs-list">
+                        <li><strong>Modelo:</strong> DS2000 + DS3000</li>
+                        <li><strong>Marca:</strong> Bi-Direction Daosafe</li>
+                        <li><strong>Tipo:</strong> Solapa aleta óptico</li>
+                        <li><strong>Acceso:</strong> Doble (peatones y minusválidos)</li>
+                        <li><strong>Flujo:</strong> Alto tráfico bidireccional</li>
+                        <li><strong>Uso:</strong> Áreas restringidas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad para los modales
+        document.addEventListener('DOMContentLoaded', function() {
+            // Abrir modales
+            const modalLinks = document.querySelectorAll('[href^="#modal"]');
+            modalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('href');
+                    document.querySelector(modalId).style.display = 'block';
+                });
+            });
+            
+            // Cerrar modales
+            const closeButtons = document.querySelectorAll('.close-modal');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Cerrar al hacer clic fuera del contenido
+            window.addEventListener('click', function(e) {
+                if (e.target.classList.contains('modal')) {
+                    e.target.style.display = 'none';
+                }
+            });
+            
+            // Cerrar con tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.modal').forEach(modal => {
+                        modal.style.display = 'none';
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
