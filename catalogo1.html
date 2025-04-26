@@ -5,249 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Completo de Torniquetes y Controles de Acceso</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .page-title {
-            font-size: 2.2rem;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        
-        .page-subtitle {
-            font-size: 1.1rem;
-            color: #7f8c8d;
-            font-weight: normal;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            border: 1px solid #e0e0e0;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .product-content {
-            padding: 20px;
-        }
-        
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-        
-        .product-description {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .product-badge {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .badge-new {
-            background-color: #2ecc71;
-        }
-        
-        .badge-tech {
-            background-color: #9b59b6;
-        }
-        
-        .badge-accessible {
-            background-color: #e67e22;
-        }
-        
-        .view-details {
-            display: inline-flex;
-            align-items: center;
-            color: #3498db;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        .view-details:hover {
-            color: #2980b9;
-        }
-        
-        .view-details i {
-            margin-right: 6px;
-            font-size: 0.9rem;
-        }
-        
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            overflow: auto;
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 30px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 800px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: #aaa;
-            cursor: pointer;
-        }
-        
-        .close-modal:hover {
-            color: #333;
-        }
-        
-        .modal-image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 4px;
-        }
-        
-        .modal-title {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .modal-section {
-            margin-bottom: 20px;
-        }
-        
-        .modal-section h3 {
-            color: #3498db;
-            margin-bottom: 10px;
-        }
-        
-        .specs-list {
-            list-style-type: none;
-        }
-        
-        .specs-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .specs-list li:before {
-            content: "•";
-            color: #3498db;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .page-title {
-                font-size: 1.8rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/catalogo.css">
 </head>
 <body>
     <div class="container">
         <header class="page-header">
+            <img src="images/logo.png" alt="Alma Verde Logo" class="logo">
             <h1 class="page-title">Catálogo Completo de Torniquetes</h1>
-            <p class="page-subtitle">12 modelos profesionales para control de acceso</p>
         </header>
         
         <div class="products-grid">
             <!-- Producto 1 -->
             <div class="product-card">
-                <img src="images-catalogo/1.jpg" alt="Torniquete Pedestal Simple" class="product-image">
+                <img src="images-catalogo/1.jpeg" alt="Torniquete Pedestal Simple" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">1. TORNIQUETE PEDESTAL SIMPLE</h3>
                     <p class="product-description">Diseño compacto en acero inoxidable con función de caída de brazo automática.</p>
@@ -260,7 +30,7 @@
             
             <!-- Producto 2 -->
             <div class="product-card">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Bidireccional" class="product-image">
+                <img src="images-catalogo/6.jpeg" alt="Torniquete Bidireccional" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">2. TORNIQUETE BIDIRECCIONAL</h3>
                     <p class="product-description">Con lector tarjeta-huella Silk TS-2022PRO integrado.</p>
@@ -272,7 +42,7 @@
             
             <!-- Producto 3 -->
             <div class="product-card">
-                <img src="images-catalogo/3.jpg" alt="Torniquete Abatible Alto Tráfico" class="product-image">
+                <img src="images-catalogo/5.jpeg" alt="Torniquete Abatible Alto Tráfico" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">3. TORNIQUETE ABATIBLE UN CARRIL ALTO TRÁFICO</h3>
                     <p class="product-description">Modelo FBL6000 Pro para alto flujo de personas.</p>
@@ -284,7 +54,7 @@
             
             <!-- Producto 4 -->
             <div class="product-card">
-                <img src="images-catalogo/4.jpg" alt="Torniquete FBL4000 PRO" class="product-image">
+                <img src="images-catalogo/7.jpeg" alt="Torniquete FBL4000 PRO" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">4. TORNIQUETE FBL4000 PRO</h3>
                     <p class="product-description">Barrera de doble aleta para alto volumen de tráfico.</p>
@@ -296,7 +66,7 @@
             
             <!-- Producto 5 -->
             <div class="product-card">
-                <img src="images-catalogo/1.jpg" alt="Torniquete Abatible Central" class="product-image">
+                <img src="images-catalogo/4.jpeg" alt="Torniquete Abatible Central" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">5. TORNIQUETE ABATIBLE CENTRAL CARRIL</h3>
                     <p class="product-description">Para carril adicional en oficinas y edificios.</p>
@@ -308,7 +78,7 @@
             
             <!-- Producto 6 -->
             <div class="product-card">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Minusválido Abatible" class="product-image">
+                <img src="images-catalogo/8.jpeg" alt="Torniquete Minusválido Abatible" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">6. TORNIQUETE MINUSVALIDO ABATIBLE</h3>
                     <p class="product-description">Modelo SBT-2000S para personas con movilidad reducida.</p>
@@ -321,7 +91,7 @@
             
             <!-- Producto 7 -->
             <div class="product-card">
-                <img src="images-catalogo/3.jpg" alt="Lector SilkID Huella-Tarjeta" class="product-image">
+                <img src="images-catalogo/2.jpeg" alt="Lector SilkID Huella-Tarjeta" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">7. LECTOR SILKID HUELLA-TARJETA</h3>
                     <p class="product-description">Interior y exterior empotrado, modelo FR1500S.</p>
@@ -333,7 +103,7 @@
             
             <!-- Producto 8 -->
             <div class="product-card">
-                <img src="images-catalogo/4.jpg" alt="Lector Standalone Huella-Tarjeta" class="product-image">
+                <img src="images-catalogo/3.jpeg" alt="Lector Standalone Huella-Tarjeta" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">8. LECTOR STANDALONE HUELLA-TARJETA ID EXT MA500</h3>
                     <p class="product-description">Dispositivo autónomo para control de acceso.</p>
@@ -345,7 +115,7 @@
             
             <!-- Producto 9 -->
             <div class="product-card">
-                <img src="images-catalogo/1.jpg" alt="Reconocimiento Facial Standalone" class="product-image">
+                <img src="images-catalogo/10.jpeg" alt="Reconocimiento Facial Standalone" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">9. FACIAL STANDALONE DAHUA 3.000 USER</h3>
                     <p class="product-description">Reconocimiento facial con huella, tarjeta y QR.</p>
@@ -358,7 +128,7 @@
             
             <!-- Producto 10 -->
             <div class="product-card">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Oscilante Óptico" class="product-image">
+                <img src="images-catalogo/9.jpeg" alt="Torniquete Oscilante Óptico" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">10. TORNIQUETE OSCILANTE ÓPTICO 1 HOJA DSN205S</h3>
                     <p class="product-description">Nebula Bi-Direction Daosafe para interiores/exteriores.</p>
@@ -370,7 +140,7 @@
             
             <!-- Producto 11 -->
             <div class="product-card">
-                <img src="images-catalogo/3.jpg" alt="Torniquete Trípode Nebula" class="product-image">
+                <img src="images-catalogo/12.jpeg" alt="Torniquete Trípode Nebula" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">11. TORNIQUETE TRÍPODE DSN50 NEBULA</h3>
                     <p class="product-description">Bi-Direction Daosafe, diseño delgado y compacto.</p>
@@ -382,7 +152,7 @@
             
             <!-- Producto 12 -->
             <div class="product-card">
-                <img src="images-catalogo/4.jpg" alt="Torniquete Solapa Aleta Óptico" class="product-image">
+                <img src="images-catalogo/11.jpeg" alt="Torniquete Solapa Aleta Óptico" class="product-image">
                 <div class="product-content">
                     <h3 class="product-title">12. TORNIQUETE SOLAPA ALETA ÓPTICO DISCAPACITADOS DS2000 + DS3000</h3>
                     <p class="product-description">Bi-Direction Daosafe para peatones y minusválidos.</p>
@@ -394,15 +164,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Modales para los 12 productos -->
+    
+    <!--Modals de los productos -->
     <!-- Modal Producto 1 -->
     <div id="modalProducto1" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">1. TORNIQUETE PEDESTAL SIMPLE</h2>
             <div class="modal-body">
-                <img src="images-catalogo/1.jpg" alt="Torniquete Pedestal Simple" class="modal-image">
+                <img src="images-catalogo/1.jpeg" alt="Torniquete Pedestal Simple" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -429,7 +199,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">2. TORNIQUETE BIDIRECCIONAL</h2>
             <div class="modal-body">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Bidireccional" class="modal-image">
+                <img src="images-catalogo/6.jpeg" alt="Torniquete Bidireccional" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -456,7 +226,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">3. TORNIQUETE ABATIBLE UN CARRIL ALTO TRÁFICO</h2>
             <div class="modal-body">
-                <img src="images-catalogo/3.jpg" alt="Torniquete Abatible Alto Tráfico" class="modal-image">
+                <img src="images-catalogo/5.jpeg" alt="Torniquete Abatible Alto Tráfico" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -483,7 +253,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">4. TORNIQUETE FBL4000 PRO</h2>
             <div class="modal-body">
-                <img src="images-catalogo/4.jpg" alt="Torniquete FBL4000 PRO" class="modal-image">
+                <img src="images-catalogo/7.jpeg" alt="Torniquete FBL4000 PRO" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -511,7 +281,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">5. TORNIQUETE ABATIBLE CENTRAL CARRIL</h2>
             <div class="modal-body">
-                <img src="images-catalogo/1.jpg" alt="Torniquete Abatible Central" class="modal-image">
+                <img src="images-catalogo/4.jpeg" alt="Torniquete Abatible Central" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -538,7 +308,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">6. TORNIQUETE MINUSVALIDO ABATIBLE</h2>
             <div class="modal-body">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Minusválido Abatible" class="modal-image">
+                <img src="images-catalogo/8.jpeg" alt="Torniquete Minusválido Abatible" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -566,7 +336,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">7. LECTOR SILKID HUELLA-TARJETA INTERIOR Y EXTERIOR EMPOTRA</h2>
             <div class="modal-body">
-                <img src="images-catalogo/3.jpg" alt="Lector SilkID Huella-Tarjeta" class="modal-image">
+                <img src="images-catalogo/2.jpeg" alt="Lector SilkID Huella-Tarjeta" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -593,7 +363,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">8. LECTOR STANDALONE HUELLA-TARJETA ID EXT MA500</h2>
             <div class="modal-body">
-                <img src="images-catalogo/4.jpg" alt="Lector Standalone Huella-Tarjeta" class="modal-image">
+                <img src="images-catalogo/3.jpeg" alt="Lector Standalone Huella-Tarjeta" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -621,7 +391,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">9. FACIAL STANDALONE DAHUA 3.000 USER HUELLA-TARJ QR WIFI</h2>
             <div class="modal-body">
-                <img src="images-catalogo/1.jpg" alt="Reconocimiento Facial Standalone" class="modal-image">
+                <img src="images-catalogo/10.jpeg" alt="Reconocimiento Facial Standalone" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -650,7 +420,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">10. TORNIQUETE OSCILANTE ÓPTICO 1 HOJA DSN205S NEBULA BI-DIRECTION DAOSAFE</h2>
             <div class="modal-body">
-                <img src="images-catalogo/2.jpg" alt="Torniquete Oscilante Óptico" class="modal-image">
+                <img src="images-catalogo/9.jpeg" alt="Torniquete Oscilante Óptico" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -678,7 +448,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">11. TORNIQUETE TRÍPODE DSN50 NEBULA BI-DIRECTION DAOSAFE</h2>
             <div class="modal-body">
-                <img src="images-catalogo/3.jpg" alt="Torniquete Trípode Nebula" class="modal-image">
+                <img src="images-catalogo/12.jpeg" alt="Torniquete Trípode Nebula" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
@@ -706,7 +476,7 @@
             <span class="close-modal">&times;</span>
             <h2 class="modal-title">12. TORNIQUETE SOLAPA ALETA ÓPTICO DISCAPACITADOS DS2000 + DS3000 BI-DIRECTION DAOSAFE</h2>
             <div class="modal-body">
-                <img src="images-catalogo/4.jpg" alt="Torniquete Solapa Aleta Óptico" class="modal-image">
+                <img src="images-catalogo/11.jpeg" alt="Torniquete Solapa Aleta Óptico" class="modal-image">
                 
                 <div class="modal-section">
                     <h3>Descripción</h3>
