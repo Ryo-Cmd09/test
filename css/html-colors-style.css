@@ -302,7 +302,7 @@ h1,h2,h3,h4,h5
 }
 
 #portfolio h2 {
-    color: #57e206;
+    color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 50px;
     position: relative;
@@ -314,7 +314,7 @@ h1,h2,h3,h4,h5
     position: absolute;
     width: 50%;
     height: 3px;
-    background: #57e206;
+    background: #BDC4B5;
     bottom: -10px;
     left: 25%;
 }
@@ -341,7 +341,7 @@ h1,h2,h3,h4,h5
 
 .portfolio-img {
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
     display: block;
 }
@@ -352,7 +352,7 @@ h1,h2,h3,h4,h5
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(87, 226, 6, 0.9);
+    background: #72825F;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -706,86 +706,3 @@ a, button, .producto {
     display: block;
     margin: 0 auto 20px; /* centra el logo y agrega espacio debajo */
 }
-
-/* --- Navbar fija --- */
-.navbar {
-    background-color: #ffffff;
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    width: 100%;
-    padding: 10px 0;
-  }
-  
-  .navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-brand span {
-    color: #2e7d32;
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  
-  .navbar-toggle .icon-bar {
-    background-color: #2e7d32;
-  }
-  
-  .navbar-collapse {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .navbar-nav {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-  }
-  
-  .navbar-nav li {
-    display: inline-block;
-    margin-left: 20px;
-  }
-  
-  .navbar-nav li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #2e7d32;
-    font-size: 1em;
-  }
-  
-  .navbar-nav li a:hover {
-    color: #1b5e20;
-  }
-  
-  /* --- Espaciado para que no se solape con contenido --- */
-  body {
-    padding-top: 70px; /* Ajuste según la altura de la navbar */
-  }
-  
-  /* --- Estilos para la barra de navegación en móviles --- */
-  @media (max-width: 768px) {
-    .navbar-brand img {
-      height: 24px;
-    }
-  
-    .navbar-nav li {
-      margin-left: 10px;
-    }
-  
-    .navbar-nav li a {
-      font-size: 1.2em;
-    }
-  }
-  
