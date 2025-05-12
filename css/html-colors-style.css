@@ -289,9 +289,6 @@ h1,h2,h3,h4,h5
 /* end about */
 
 /* start portfolio */
-/* ----------------------------- */
-/* ESTILOS PARA CATÁLOGO EN FILA */
-/* ----------------------------- */
 
 #portfolio {
     background: #1a1a1a;
@@ -394,9 +391,7 @@ h1,h2,h3,h4,h5
     font-size: 0.8rem;
 }
 
-/* ----------------------------- */
-/* RESPONSIVE DESIGN */
-/* ----------------------------- */
+/* Estilo responsivo */
 
 @media (max-width: 1199px) {
     .portfolio-row {
@@ -412,7 +407,7 @@ h1,h2,h3,h4,h5
         padding: 80px 0;
     }
     .portfolio-row {
-        justify-content: flex-start; /* Alinea a la izquierda para scroll */
+        justify-content: flex-start; 
         padding: 20px 10px;
     }
     .portfolio-item {
@@ -566,7 +561,7 @@ footer hr
     font-weight: bold;
 }
 
-/* Estructura de la información de contacto */
+/*  contacto */
 .contact-info {
     background: #1a1a1a;
     padding: 30px;
@@ -684,7 +679,6 @@ a, button, .producto {
     transition: all 0.3s ease !important;
 }
 
-/* Mejorar legibilidad en móviles */
 @media (max-width: 768px) {
     body {
         font-size: 16px;
@@ -704,5 +698,5 @@ a, button, .producto {
     max-width: 180px;
     height: auto;
     display: block;
-    margin: 0 auto 20px; /* centra el logo y agrega espacio debajo */
+    margin: 0 auto 20px; 
 }

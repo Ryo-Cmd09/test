@@ -1,4 +1,4 @@
-/* Ajustes generales para móviles */
+/* Ajustes generales*/
 body {
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
@@ -10,7 +10,6 @@ h2 { font-size: calc(1.3rem + 1vw); }
 h3 { font-size: calc(1.1rem + 0.8vw); }
 p, li, a { font-size: calc(0.9rem + 0.3vw); }
 
-/* Botones más grandes para tacto */
 .btn {
     padding: 12px 24px;
     margin: 8px 0;
@@ -146,9 +145,8 @@ p, li, a { font-size: calc(0.9rem + 0.3vw); }
     }
 }
 
-/* Animaciones y estilos específicos para móviles */
+/*  */
 @media (max-width: 768px) {
-    /* Menú hamburguesa animado */
     .navbar-toggle .icon-bar {
         transition: all 0.3s ease;
         background: #4CAF50;
