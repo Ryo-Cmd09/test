@@ -294,8 +294,8 @@ h1,h2,h3,h4,h5
     background: #1a1a1a;
     padding: 100px 0;
     text-align: center;
-    overflow-x: auto; /* Permite scroll horizontal en móvil */
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
 }
 
 #portfolio h2 {
@@ -327,13 +327,13 @@ h1,h2,h3,h4,h5
 
 .portfolio-item {
     position: relative;
-    min-width: 300px; /* Ancho mínimo para cada item */
-    width: calc(33.333% - 20px); /* 3 items por fila con gap */
+    min-width: 300px; 
+    width: calc(33.333% - 20px); 
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
-    flex-shrink: 0; /* Evita que se reduzcan */
+    flex-shrink: 0; 
 }
 
 .portfolio-img {
