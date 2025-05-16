@@ -858,3 +858,76 @@ a, button, .producto {
     display: block;
     margin: 0 auto 20px; 
 }
+
+
+/* Partners Section - Versión mejorada */
+#partners {
+    background-color: #292929;
+    padding: 30px 0px;
+    text-align: center;
+}
+
+.partners-subtitle {
+    color: #5a5a5a;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.partners-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 20px 0;
+    justify-content: center;
+    -webkit-overflow-scrolling: touch; 
+}
+
+.partner-item {
+    min-width: 200px;
+    text-align: center;
+    padding: 12px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+}
+
+.partner-logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.partner-name {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+}
+
+.partner-desc {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .partners-container {
+        justify-content: flex-start;
+        padding-bottom: 30px;
+    }
+    
+    .partner-item {
+        min-width: 160px;
+        padding: 15px;
+    }
+    
+    .partner-logo {
+        height: 60px;
+    }
+}
