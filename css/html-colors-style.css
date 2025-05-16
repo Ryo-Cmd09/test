@@ -518,30 +518,125 @@ footer hr
 /* end footer */
 
 /* start social icon */
-.social-icon
-    {
-        position: relative;
-        padding: 0;
-        margin: 0;
+
+/* Agrega estos estilos a tu CSS */
+.redes-sociales {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(26, 26, 26, 0.7);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.social-title {
+    color: #57e206;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.social-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #57e206;
+    bottom: -8px;
+    left: 25%;
+}
+
+.social-subtitle {
+    color: #BDC4B5;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    position: relative;
+}
+
+.social-icons li a {
+    font-size: 1.5rem;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-icons li a.facebook {
+    background: #3b5998;
+    border: 2px solid #3b5998;
+}
+
+.social-icons li a.instagram {
+    background: #e4405f;
+    border: 2px solid #e4405f;
+}
+
+.social-icons li a.whatsapp {
+    background: #25D366;
+    border: 2px solid #25D366;
+}
+
+.social-icons li a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.social-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a1a;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-icons li a:hover .social-tooltip {
+    opacity: 1;
+    bottom: -25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 10px;
     }
-.social-icon li
-    {
-        display: inline-block;
-        list-style: none;
+    
+    .social-icons li a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
-.social-icon li a
-    {
-        border-radius: 50%;
-        color: #606060;
-        text-decoration: none;
-        transition: all 0.4s ease-in-out;
-        text-align: center;
-        margin-right: 10px;
+    
+    .social-title {
+        font-size: 1.3rem;
     }
-.social-icon li a:hover
-    {
-        color: #D43F52;
-    }
+}
+
 /* end social icon */
 
 /* Estilos generales para la sección de contacto */
